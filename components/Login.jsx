@@ -80,7 +80,7 @@ function Login() {
   return (
     <div className='h-[90vh] bg-gray-100 flex justify-center items-center'>
       {isSubmitting && <div className='text-center fixed w-full'><Loading /></div>} <>
-        <div className='bg-white shadow-lg w-[90vw] h-[80vh] md:w-[80vw] lg:w-[50vw]  rounded-2xl px-4 flex flex-col gap-10 justify-center'>
+        <div className='bg-white shadow-lg w-[100vw] h-[90vh] md:h-[80vh] md:w-[80vw] lg:w-[50vw]  rounded-2xl px-4 flex flex-col gap-10 justify-center'>
           <h1 className='text-center text-4xl logo text-purple-600'>LOGIN</h1>
           <form action="" className='flex flex-col gap-5' onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="Email" className='font-medium text-xl'>Email</label>

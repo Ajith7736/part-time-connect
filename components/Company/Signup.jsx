@@ -74,9 +74,9 @@ function CompanySignup() {
             {showotp && !isSubmitting && <div className='bg-white/50 fixed w-full h-[90vh] flex justify-center items-center'><Companyotp Email={Formdata?.Email} /></div>}
             {isSubmitting && <div className='text-center fixed w-full h-[90vh]'><Loading /></div>}
             <div className='w-full h-screen bg-gray-100 flex  justify-center items-center select-none'>
-                <div className='bg-white w-[90vw] lg:w-[40vw] md:w-[60vw] h-auto shadow-xl p-4 pt-15 rounded-xl'>
+                <div className='bg-white w-[100vw] h-[100vh] lg:w-[40vw] md:w-[60vw] md:h-auto shadow-xl p-4 pt-15 rounded-xl'>
                     <div className='text-center text-4xl text-purple-500 font-bold logo'>Register Company</div>
-                    <form action="" onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-1 mt-10'>
+                    <form action="" onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3 md:gap-2 mt-10'>
                         <label htmlFor="Companyname" className='font-medium text-xl '>Company Name</label>
                         <input {...register("Companyname", { required: { value: true, message: "This field is required !" } })} type="text" name="Companyname" id="Companyname" className='bg-gray-100 px-2 py-3 rounded-lg placeholder:text-gray-700 focus:outline-none' placeholder='Enter Company Name' />
                         {errors.Companyname && <div className='text-red-500'>{errors.Companyname.message}</div>}
