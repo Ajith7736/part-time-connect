@@ -261,7 +261,6 @@ function Applicants() {
                   <div className='font-medium '>Email : {item.Email}</div>
                   <div className='font-medium '>Phonenumber : {item.Phonenumber}</div>
                 </div>
-                <button className='bg-blue-400 text-white font-bold rounded-lg p-2 hover:bg-blue-500'>View Profile</button>
               </div>
             })}
           </div>
