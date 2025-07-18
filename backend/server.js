@@ -14,10 +14,7 @@ const port = process.env.PORT || 5050
 
 connectdb()
 
-app.use(cors({
-  origin: ['https://part-time-connect.vercel.app/'], // allow frontend
-  credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
