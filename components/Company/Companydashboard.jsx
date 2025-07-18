@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Loading from './Loading';
 import { useSelector } from 'react-redux';
+import { useMemo } from 'react';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Companydashboard() {
@@ -57,6 +58,14 @@ function Companydashboard() {
   }
 
 
+  const activejob = useMemo(()=>{
+    return jobs.map((item)=>{
+      if(item.status === "Active"){
+        return item
+      }
+    })
+  },[jobs])
+
   return (
     <>
       {isloading && <div className='text-center absolute w-full h-[100vh]'><Loading /></div>}
@@ -70,7 +79,7 @@ function Companydashboard() {
             </div>
             <div className='h-[15vh] w-[70vw] lg:w-[30vw] bg-white rounded-2xl shadow-lg flex flex-col'>
               <div className='text-center font-bold logo text-2xl mt-5'>Active Jobs</div>
-              <div className='text-center mt-4 text-3xl font-bold text-green-600'>1</div>
+              <div className='text-center mt-4 text-3xl font-bold text-green-600'>{activejob.length}</div>
             </div>
           </div>
           <div className='text-3xl font-bold logo'>Your Jobs</div>
