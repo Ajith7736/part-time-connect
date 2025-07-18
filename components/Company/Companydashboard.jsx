@@ -59,7 +59,7 @@ function Companydashboard() {
 
 
   const activejob = useMemo(()=>{
-    return jobs.map((item)=>{
+    return jobs.filter((item)=>{
       if(item.status === "Active"){
         return item
       }
