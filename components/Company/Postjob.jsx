@@ -12,6 +12,7 @@ function Postjob() {
   const [todaydate, settodaydate] = useState('');
   const company = localStorage.getItem("companydata") && JSON.parse(localStorage.getItem("companydata"))
   const companytoken = localStorage.getItem("companytoken")
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const {
     register,
     handleSubmit,
@@ -34,7 +35,7 @@ function Postjob() {
 
 
   const postjob = async () => {
-    try {let res = await fetch("http://localhost:3000/api/jobs",
+    try {let res = await fetch(`${BASE_URL}/api/jobs`,
       {
         method: "POST",
         headers: {

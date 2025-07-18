@@ -16,13 +16,14 @@ function Favourites() {
   const user = localStorage.getItem("userdata") && JSON.parse(localStorage.getItem("userdata"))
   const token = localStorage.getItem("token")
   const [wishlistdb, setwishlistdb] = useState([])
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   
   // to delete the wishlist from the db
 
   const removewishlist = async (id) => {
     try {
-      let res = await fetch("http://localhost:3000/api/wishlist", {
+      let res = await fetch(`${BASE_URL}/api/wishlist`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

@@ -22,6 +22,7 @@ function CompanySignup() {
     const [showotp, setshowotp] = useState(false)
     const [isloading, setisloading] = useState(false)
     const [eyevisible, seteyevisible] = useState(false)
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const passref = useRef()
     useEffect(() => {
         if (Formdata) {
@@ -32,7 +33,7 @@ function CompanySignup() {
 
     const submitdata = async () => {
         setisloading(true)
-        let res = await fetch("http://localhost:3000/api/company/signup", {
+        let res = await fetch(`${BASE_URL}/api/company/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -20,7 +20,7 @@ function Applicants() {
   const [edittingjobid, setedittingjobid] = useState(null)
   const company = localStorage.getItem("companydata") && JSON.parse(localStorage.getItem("companydata"));
   const navigate = useNavigate()
-
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetchjobs()
@@ -39,7 +39,7 @@ function Applicants() {
   }
 
   const fetchjobs = async () => {
-    let res = await fetch("http://localhost:3000/api/company/getjobs", {
+    let res = await fetch(`${BASE_URL}/api/company/getjobs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function Applicants() {
 
 
   const getapplicants = async (jobid) => {
-    let res = await fetch("http://localhost:3000/api/getapplicants",
+    let res = await fetch(`${BASE_URL}/api/getapplicants`,
       {
         method: "POST",
         headers: {
@@ -92,7 +92,7 @@ function Applicants() {
   }
 
   const deletejob = async (id) => {
-    let res = await fetch("http://localhost:3000/api/company/deletejob", {
+    let res = await fetch(`${BASE_URL}/api/company/deletejob`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ function Applicants() {
         return item
       }
     })
-    let res = await fetch("http://localhost:3000/api/company/updatejob", {
+    let res = await fetch(`${BASE_URL}/api/company/updatejob`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

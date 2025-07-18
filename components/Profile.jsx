@@ -20,7 +20,7 @@ function Profile() {
     const [userdata, setuserdata] = useState(localStorage.getItem("userdata") ? JSON.parse(localStorage.getItem("userdata")) : "")
     const [newuserdata, setnewuserdata] = useState(null)
     const editbox = useRef()
-
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     const {
         register,
@@ -77,7 +77,7 @@ function Profile() {
 
     const updateuser = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/update", {
+            const res = await fetch(`${BASE_URL}/api/update`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

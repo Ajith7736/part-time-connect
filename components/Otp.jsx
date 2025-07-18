@@ -17,6 +17,7 @@ function Otp(params) {
   const [isloading, setisloading] = useState(false)
   const navigate = useNavigate()
   let timer = useRef()
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   // timer for the otp
 
@@ -85,7 +86,7 @@ function Otp(params) {
   // send the otp that is being given by the user
 
   const handlesubmit = async () => {
-    let res = await fetch("http://localhost:3000/api/verify-otp", {
+    let res = await fetch(`${BASE_URL}/api/verify-otp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -105,7 +106,7 @@ function Otp(params) {
 
   const handleresend = async () => {
     setisloading(true)
-    let res = await fetch("http://localhost:3000/api/resend-otp", {
+    let res = await fetch(`${BASE_URL}/api/resend-otp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

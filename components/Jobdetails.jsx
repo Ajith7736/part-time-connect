@@ -12,6 +12,7 @@ function Jobdetails() {
   const token = localStorage.getItem("token")
   const [jobdata, setjobdata] = useState({})
   const [isloading, setisloading] = useState(true)
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   // timeout for loading
 
@@ -44,7 +45,7 @@ function Jobdetails() {
   // fetch the job from the db
 
   const getjob = async () => {
-    let res = await fetch("http://localhost:3000/api/getjobwithid", {
+    let res = await fetch(`${BASE_URL}/api/getjobwithid`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

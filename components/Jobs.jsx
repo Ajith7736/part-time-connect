@@ -14,13 +14,14 @@ function Jobs() {
   const user = localStorage.getItem("userdata") ? localStorage.getItem("userdata") : ""
   const token = localStorage.getItem("token")
   const userlog = localStorage.getItem("user")
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
   // delete the job from applicants
 
   const deletejob = async (id) => {
         try {
-            let res = await fetch("http://localhost:3000/api/applicant", {
+            let res = await fetch(`${BASE_URL}/api/applicant`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

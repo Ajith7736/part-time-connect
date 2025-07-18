@@ -23,7 +23,7 @@ function Dashboard() {
     const timeref = useRef(null)
     const locationref = useRef(null)
     const user = localStorage.getItem("userdata") ? JSON.parse(localStorage.getItem("userdata")) : {}
-    
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     // fetches job and wishlist on the first render
 
     useEffect(() => {
@@ -53,7 +53,7 @@ function Dashboard() {
 
     const fetchjobs = async () => {
         setisloading(true)
-        let res = await fetch("http://localhost:3000/api/getjobs", {
+        let res = await fetch(`${BASE_URL}/api/getjobs`, {
             method: "POST",
             headers: { "Authorization": `Bearer ${token}` }
         })
@@ -74,7 +74,7 @@ function Dashboard() {
     // fetch wishlist from the backend
 
     const fetchwishlist = async () => {
-        let res = await fetch("http://localhost:3000/api/getwishlist", {
+        let res = await fetch(`${BASE_URL}/api/getwishlist`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

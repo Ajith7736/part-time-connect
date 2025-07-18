@@ -17,6 +17,7 @@ function Companyotp(params) {
   const [isloading, setisloading] = useState(false)
   const navigate = useNavigate()
   let timer = useRef()
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     timer.current = setTimeout(() => {
@@ -75,7 +76,7 @@ function Companyotp(params) {
   let finalotp = Otparr.toString().replaceAll(",", "")
 
   const handlesubmit = async () => {
-    let res = await fetch("http://localhost:3000/api/company/verify-otp", {
+    let res = await fetch(`${BASE_URL}/api/company/verify-otp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -93,7 +94,7 @@ function Companyotp(params) {
 
   const handleresend = async () => {
     setisloading(true)
-    let res = await fetch("http://localhost:3000/api/company/resend-otp", {
+    let res = await fetch(`${BASE_URL}/api/company/resend-otp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

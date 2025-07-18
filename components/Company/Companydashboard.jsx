@@ -15,6 +15,7 @@ function Companydashboard() {
   const [isloading, setisloading] = useState(false)
   const company = localStorage.getItem("companydata") && JSON.parse(localStorage.getItem("companydata"));
   const navigate = useNavigate()
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetchjobs()
@@ -26,7 +27,7 @@ function Companydashboard() {
   const fetchjobs = async () => {
 
     try {
-      let res = await fetch("http://localhost:3000/api/company/getjobs", {
+      let res = await fetch(`${BASE_URL}/api/company/getjobs`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

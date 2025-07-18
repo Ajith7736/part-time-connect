@@ -19,6 +19,7 @@ function Companyprofile() {
   const [newcompanydata, setnewcompanydata] = useState(null)
   const [image, setimage] = useState(null)
   const editbox = useRef()
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const {
     register,
     handleSubmit,
@@ -42,7 +43,7 @@ function Companyprofile() {
 
 
   const updatecompany = async () => {
-    const res = await fetch("http://localhost:3000/api/company/update", {
+    const res = await fetch(`${BASE_URL}/api/company/update`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -19,13 +19,13 @@ function Jobscard({ item }) {
     const wishlist = useSelector(state => state.wishlist.items)
     const appliedjobs = useSelector(state => state.appliedjob.jobs)
     const token = localStorage.getItem("token")
-
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     // add the job to the wishlist when the wishlist icon is clickec
 
     const wishlistadd = async () => {
         let wishdata = { userId: user.id, jobId: item._id }
         try {
-            let res = await fetch("http://localhost:3000/api/wishlist", {
+            let res = await fetch(`${BASE_URL}/api/wishlist`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -53,7 +53,7 @@ function Jobscard({ item }) {
 
     const removewishlist = async () => {
         try {
-            let res = await fetch("http://localhost:3000/api/wishlist", {
+            let res = await fetch(`${BASE_URL}/api/wishlist`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -80,7 +80,7 @@ function Jobscard({ item }) {
 
     const addjob = async () => {
         try {
-            let res = await fetch("http://localhost:3000/api/applicant", {
+            let res = await fetch(`${BASE_URL}/api/applicant`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -107,7 +107,7 @@ function Jobscard({ item }) {
 
     const deletejob = async () => {
         try {
-            let res = await fetch("http://localhost:3000/api/applicant", {
+            let res = await fetch(`${BASE_URL}/api/applicant`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

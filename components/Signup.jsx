@@ -30,6 +30,7 @@ function Signup() {
   const [Fulltext, setFulltext] = useState(null)
   const [showotp, setshowotp] = useState(false)
   const [isloading, setisloading] = useState(false)
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 
@@ -46,7 +47,7 @@ function Signup() {
   const senduserdata = async () => {
     setisloading(true)
     try {
-      let res = await fetch("http://localhost:3000/api/Signup", {
+      let res = await fetch(`${BASE_URL}/api/Signup`, {
         method: "POST", headers: {
           "Content-Type": "application/json"
         }, body: JSON.stringify(Formdata)

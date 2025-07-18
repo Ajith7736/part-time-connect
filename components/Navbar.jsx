@@ -21,6 +21,7 @@ function Navbar() {
     const totalwish = useSelector(state => state.wishlist.total)
     const totaljobs = useSelector(state => state.appliedjob.total)
     const dispatch = useDispatch()
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     // hamburger hide and unhide
 
@@ -43,7 +44,7 @@ function Navbar() {
 
     const deleteapplicants = async () => {
         try {
-            let res = await fetch("http://localhost:3000/api/deleteallapplicants", {
+            let res = await fetch(`${BASE_URL}/api/deleteallapplicants`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ id: userdata?.id })
