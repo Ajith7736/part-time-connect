@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Loading from './Loading'
 import { FiEdit } from 'react-icons/fi';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 function Companyprofile() {
@@ -19,7 +20,6 @@ function Companyprofile() {
   const [newcompanydata, setnewcompanydata] = useState(null)
   const [image, setimage] = useState(null)
   const editbox = useRef()
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const {
     register,
     handleSubmit,

@@ -11,6 +11,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { createWorker } from 'tesseract.js'
 import Otp from './Otp'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Signup() {
   const {
@@ -30,7 +31,6 @@ function Signup() {
   const [Fulltext, setFulltext] = useState(null)
   const [showotp, setshowotp] = useState(false)
   const [isloading, setisloading] = useState(false)
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 
@@ -196,7 +196,6 @@ function Signup() {
           </form>
           <div className='flex flex-col gap-3'>
             <div className='text-center'>Already have an account ? <Link to={'/login'} className='text-red-600 hover:underline'>Login</Link></div>
-            <div className='text-center'>Forgot Password ? <Link to={'/Signup'} className='text-red-600 hover:underline'>Reset Password</Link></div>
             <div className='text-center'>Sign up as Company ? <Link to={'/Signup'} className='text-red-600 hover:underline'>Company</Link></div>
           </div>
         </div>

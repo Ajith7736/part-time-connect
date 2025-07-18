@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import { clearappliedjobs } from '../src/redux/appliedJobSlice';
 import { clearwishlist } from '../src/redux/wishlistSlice';
 import { useDispatch } from 'react-redux';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Navbar() {
     const hamburger = useRef()
@@ -21,7 +22,6 @@ function Navbar() {
     const totalwish = useSelector(state => state.wishlist.total)
     const totaljobs = useSelector(state => state.appliedjob.total)
     const dispatch = useDispatch()
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     // hamburger hide and unhide
 

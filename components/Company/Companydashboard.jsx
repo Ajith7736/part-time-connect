@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Loading from './Loading';
 import { useSelector } from 'react-redux';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Companydashboard() {
   const companytoken = localStorage.getItem("companytoken")
@@ -15,7 +16,6 @@ function Companydashboard() {
   const [isloading, setisloading] = useState(false)
   const company = localStorage.getItem("companydata") && JSON.parse(localStorage.getItem("companydata"));
   const navigate = useNavigate()
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetchjobs()

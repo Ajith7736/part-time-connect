@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
 import { IoMdClose } from "react-icons/io";
 import toast from 'react-hot-toast';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Profile() {
     const navigate = useNavigate()
@@ -20,7 +21,6 @@ function Profile() {
     const [userdata, setuserdata] = useState(localStorage.getItem("userdata") ? JSON.parse(localStorage.getItem("userdata")) : "")
     const [newuserdata, setnewuserdata] = useState(null)
     const editbox = useRef()
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     const {
         register,

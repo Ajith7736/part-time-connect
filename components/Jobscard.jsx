@@ -10,6 +10,7 @@ import { appliedjobadd } from '../src/redux/appliedJobSlice'
 import { deleteappliedjobs } from '../src/redux/appliedJobSlice'
 import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Jobscard({ item }) {
 
@@ -19,7 +20,6 @@ function Jobscard({ item }) {
     const wishlist = useSelector(state => state.wishlist.items)
     const appliedjobs = useSelector(state => state.appliedjob.jobs)
     const token = localStorage.getItem("token")
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     // add the job to the wishlist when the wishlist icon is clickec
 
     const wishlistadd = async () => {

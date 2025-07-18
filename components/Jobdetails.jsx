@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Jobdetails() {
   const navigate = useNavigate()
@@ -12,7 +13,6 @@ function Jobdetails() {
   const token = localStorage.getItem("token")
   const [jobdata, setjobdata] = useState({})
   const [isloading, setisloading] = useState(true)
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   // timeout for loading
 
@@ -67,7 +67,7 @@ function Jobdetails() {
       navigate("/login")
     }
   }
-  
+
   return (
     <>
       {isloading && <> <div className='text-center fixed w-full h-[90vh]'><Loading /></div></>}

@@ -5,6 +5,7 @@ import toast from 'react-hot-toast'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Postjob() {
   const [Formdata, setFormdata] = useState(null)
@@ -12,7 +13,6 @@ function Postjob() {
   const [todaydate, settodaydate] = useState('');
   const company = localStorage.getItem("companydata") && JSON.parse(localStorage.getItem("companydata"))
   const companytoken = localStorage.getItem("companytoken")
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const {
     register,
     handleSubmit,

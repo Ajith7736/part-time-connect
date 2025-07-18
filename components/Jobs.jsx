@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { clearappliedjobs } from '../src/redux/appliedJobSlice'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Jobs() {
   const dispatch = useDispatch()
@@ -14,7 +15,6 @@ function Jobs() {
   const user = localStorage.getItem("userdata") ? localStorage.getItem("userdata") : ""
   const token = localStorage.getItem("token")
   const userlog = localStorage.getItem("user")
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
   // delete the job from applicants

@@ -8,6 +8,7 @@ import Jobscard from './Jobscard';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addtowishlist } from '../src/redux/wishlistSlice';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Dashboard() {
     const dispatch = useDispatch()
@@ -23,7 +24,7 @@ function Dashboard() {
     const timeref = useRef(null)
     const locationref = useRef(null)
     const user = localStorage.getItem("userdata") ? JSON.parse(localStorage.getItem("userdata")) : {}
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
     // fetches job and wishlist on the first render
 
     useEffect(() => {

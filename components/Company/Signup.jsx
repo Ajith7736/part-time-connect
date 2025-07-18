@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import { IoEye } from 'react-icons/io5'
 import { IoMdEyeOff } from 'react-icons/io'
 import { useRef } from 'react'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function CompanySignup() {
     const {
@@ -22,7 +23,6 @@ function CompanySignup() {
     const [showotp, setshowotp] = useState(false)
     const [isloading, setisloading] = useState(false)
     const [eyevisible, seteyevisible] = useState(false)
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const passref = useRef()
     useEffect(() => {
         if (Formdata) {
@@ -101,7 +101,6 @@ function CompanySignup() {
                         <input {...register("Phonenumber", { required: { value: true, message: "This field is required !" } })} type="Number" name="Phonenumber" id="Phonenumber" className='bg-gray-100 px-2 py-3 rounded-lg placeholder:text-gray-700 focus:outline-none' placeholder='Enter your Phone number' />
                         {errors.Phonenumber && <div className='text-red-500'>{errors.Phonenumber.message}</div>}
                         <input type="submit" value="Register" disabled={isSubmitting} className='bg-purple-500 text-white font-bold logo p-2 mt-3 rounded-lg disabled:bg-gray-300 lg:text-xl' />
-
                         <Link to={"/company/login"}><p className='text-center mt-1 lg:text-lg'>Already have an account ? <span className='text-red-500 hover:underline cursor-pointer'>Login</span></p></Link>
                     </form>
                 </div>

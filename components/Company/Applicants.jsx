@@ -8,6 +8,7 @@ import { useMemo } from 'react'
 import Jobscard from '../Jobscard'
 import { CiEdit } from "react-icons/ci";
 import { useRef } from 'react'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Applicants() {
   const companytoken = localStorage.getItem("companytoken")
@@ -20,7 +21,6 @@ function Applicants() {
   const [edittingjobid, setedittingjobid] = useState(null)
   const company = localStorage.getItem("companydata") && JSON.parse(localStorage.getItem("companydata"));
   const navigate = useNavigate()
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetchjobs()

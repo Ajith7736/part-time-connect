@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Favourites() {
   const dispatch = useDispatch()
@@ -16,9 +17,8 @@ function Favourites() {
   const user = localStorage.getItem("userdata") && JSON.parse(localStorage.getItem("userdata"))
   const token = localStorage.getItem("token")
   const [wishlistdb, setwishlistdb] = useState([])
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-  
+
   // to delete the wishlist from the db
 
   const removewishlist = async (id) => {
@@ -59,7 +59,7 @@ function Favourites() {
       <div className='jobs flex flex-col items-center'>
         {wishlist.length == 0 && <><div className='text-xl mt-10 font-medium'>There is no data here</div></>}
         {wishlist.map((item, index) => {
-         return <div key={index} className='bg-white w-full lg:w-[70vw] h-auto mt-5 rounded-md shadow-lg p-3 lg:p-4 flex flex-col gap-3 font-medium'>
+          return <div key={index} className='bg-white w-full lg:w-[70vw] h-auto mt-5 rounded-md shadow-lg p-3 lg:p-4 flex flex-col gap-3 font-medium'>
             <div className='flex items-center justify-between'>
               <div className='flex gap-10 items-center'>
                 <div className='flex flex-col gap-2'>

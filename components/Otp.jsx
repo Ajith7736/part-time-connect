@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
-
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Otp(params) {
 
@@ -17,7 +17,7 @@ function Otp(params) {
   const [isloading, setisloading] = useState(false)
   const navigate = useNavigate()
   let timer = useRef()
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
   // timer for the otp
 
