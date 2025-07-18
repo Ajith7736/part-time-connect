@@ -2,6 +2,7 @@ const router = require("express").Router()
 const bcrypt = require("bcrypt")
 const Company = require("../models/company")
 const jwt = require("jsonwebtoken")
+const verifytoken = require("../middlewares/verifytoken")
 require("dotenv").config();
 
 const JWT_SECRET = process.env.JWT_SECRET

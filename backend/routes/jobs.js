@@ -39,11 +39,11 @@ router.post("/getjobwithid", verifytoken, async (req, res) => {
     if (!id) {
       return res.status(400).json({ error: "Didnt recieve the data" })
     }
-    const job = await Jobs.findOne({ _id : id }).populate("Companyid")
-    if(!job){
-      return res.status(400).json({ error : "Couldnt find the job "})
+    const job = await Jobs.findOne({ _id: id }).populate("Companyid")
+    if (!job) {
+      return res.status(400).json({ error: "Couldnt find the job " })
     }
-    res.status(200).json({ success : true , job })
+    res.status(200).json({ success: true, job })
   } catch (Err) {
     console.log(Err)
   }
@@ -63,6 +63,39 @@ router.post("/company/getjobs", async (req, res) => {
     return res.status(500).json({ error: "Server error" });
   }
 });
+
+router.put("/company/updatejob", verifytoken, async (req, res) => {
+  try {
+    const { id } = req.body;
+    const { job } = req.body;
+    const result = await Jobs.findByIdAndUpdate(id, { ...job }, { new: true })
+    if (result) {
+      return res.status(200).json({ success: "Updated Successfully", result })
+    } else {
+      return res.status(400).json({ error: "Couldnt update the data" })
+    }
+
+  } catch (err) {
+    console.error("❌ Error in /getjobs:", err);
+    return res.status(500).json({ error: "Server error" });
+  }
+})
+
+router.delete("/company/deletejob", verifytoken, async (req, res) => {
+  try {
+    const { id } = req.body
+    const result = await Jobs.deleteOne({ _id: id })
+    if (result.deletedCount > 0) {
+      return res.status(200).json({ success: "Job deleted successfully" })
+    } else {
+      return res.status(400).json({ error: "Couldnt delete the job" })
+    }
+
+  } catch (err) {
+    console.error("❌ Error in /getjobs:", err);
+    return res.status(500).json({ error: "Server error" });
+  }
+})
 
 
 module.exports = router

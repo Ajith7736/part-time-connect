@@ -189,7 +189,7 @@ function Jobscard({ item }) {
                             <p className='font-medium max-[450px]:text-sm'>{item.Companyname}</p>
                         </div>
                     </div>
-                    <p className='text-green-500 font-bold bg-green-100 px-2 rounded-full max-[450px]:text-sm'>Active</p>
+                    {item.status === "Active" ? <p className='text-green-500 font-bold bg-green-100 px-2 rounded-full max-[450px]:text-sm'>{item.status}</p> : <p className='text-red-500 font-bold bg-red-100 px-2 rounded-full max-[450px]:text-sm'>{item.status}</p>}
 
                 </div>
                 <div>
@@ -204,7 +204,7 @@ function Jobscard({ item }) {
                     <NavLink to={`/dashboard/${item._id}`}><div className='text-blue-500 cursor-pointer max-[450px]:text-xs select-none hover:underline'>View details</div></NavLink>
                     <div className='flex items-center gap-3 max-[450px]:text-xs'>
                         <div onClick={(e) => handleheart(e)} >{wishlistIds.has(item._id) ? <FaHeart className='size-6 max-[450px]:size-4 text-red-500' /> : <FaRegHeart className='size-6 max-[450px]:size-4' />}</div>
-                        {appliedjobids.has(item._id) ? <div className='flex gap-3 items-center'><button className='bg-green-400 text-white px-3 py-1 rounded-sm hover:bg-green-500 font-bold select-none' onClick={handleapply}>Applied</button><button className='bg-red-200 text-red-500 px-2 py-1 rounded-md' onClick={handlecancel}>cancel</button></div> : <button className='bg-blue-400 text-white px-3 py-1 rounded-sm hover:bg-blue-500 font-bold select-none' onClick={handleapply}>Apply</button>}
+                        {appliedjobids.has(item._id) ? <div className='flex gap-3 items-center'><button className='bg-green-400 text-white px-3 py-1 rounded-sm hover:bg-green-500 font-bold select-none' onClick={handleapply}>Applied</button><button className='bg-red-200 text-red-500 px-2 py-1 rounded-md' onClick={handlecancel}>cancel</button></div> : <button className='bg-blue-400 text-white px-3 py-1 rounded-sm hover:bg-blue-500 font-bold select-none disabled:bg-gray-300' onClick={handleapply} disabled={item.status==="Closed"}>Apply</button>}
                     </div>
                 </div>
             </div>

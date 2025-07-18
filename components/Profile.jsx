@@ -102,6 +102,10 @@ function Profile() {
         }
     }
 
+    const handleedit = (e) => {
+        setuserdata({...userdata,[e.target.id] : e.target.value})
+    }
+
 
 
 
@@ -132,13 +136,13 @@ function Profile() {
                         </div>
 
                         <label htmlFor="Username" className='text-lg font-medium'>Username</label>
-                        <input type="text" {...register("Username",{required : { value : true , message : "This field is required"}})} id='Username' className='bg-white px-2 py-2 rounded-xl focus:outline-none' placeholder={userdata.Username} />
+                        <input type="text" {...register("Username",{required : { value : true , message : "This field is required"}})} id='Username' className='bg-white px-2 py-2 rounded-xl focus:outline-none' />
                         {errors.Username && <div className='text-red-500 '>{errors.Username.message}</div>}
                         <label htmlFor="Phonenumber" className='text-lg font-medium'>Phonenumber</label>
-                        <input type="number" {...register("Phonenumber",{required : { value : true , message : "This field is required"}})} id='Phonenumber' className='bg-white px-2 py-2 rounded-xl focus:outline-none' placeholder={userdata.Phonenumber} />
+                        <input type="number" {...register("Phonenumber",{required : { value : true , message : "This field is required"}})} id='Phonenumber' className='bg-white px-2 py-2 rounded-xl focus:outline-none' value={userdata.Phonenumber} onChange={handleedit} />
                         {errors.Phonenumber && <div className='text-red-500 '>{errors.Phonenumber.message}</div>}
                         <label htmlFor="Address" className='text-lg font-medium'>Address</label>
-                        <textarea name="" id="Address" {...register("Address",{required : { value : true , message : "This field is required"}})} className='bg-white px-2 py-2 rounded-xl focus:outline-none h-[100px]' placeholder={userdata.Address}></textarea>
+                        <textarea name="" id="Address" {...register("Address",{required : { value : true , message : "This field is required"}})} className='bg-white px-2 py-2 rounded-xl focus:outline-none h-[100px]' value={userdata.Address} onChange={handleedit}></textarea>
                         {errors.Address && <div className='text-red-500 '>{errors.Address.message}</div>}
                         <input type="submit" className='cursor-pointer hover:bg-gray-700 bg-gray-800 text-white font-bold p-2 rounded-lg my-3' />
                     </form>

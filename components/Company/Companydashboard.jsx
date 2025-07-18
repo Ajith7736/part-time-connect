@@ -81,7 +81,7 @@ function Companydashboard() {
                 <div className='text-gray-600 font-medium '>Total Workers : <span className='text-green-500'>{item.WorkersCount}</span></div>
                 <div className='text-gray-600 font-medium'>Location : {item.Location}</div>
                 <div className='text-gray-600 font-medium'>Salary : <span className='text-green-500'>₹{item.Salary}</span></div>
-                <div className='font-bold text-green-500 bg-green-100  text-center rounded-full mt-1 px-2'>{item.status}</div>
+                {item.status === "Active" ? <div className='font-bold text-green-500 bg-green-100  text-center rounded-full mt-1 px-2'>{item.status}</div> : <div className='font-bold text-red-500 bg-red-100  text-center rounded-full mt-1 px-2'>{item.status}</div>}
               </div>
             })}
           </div>

@@ -103,6 +103,10 @@ function Companyprofile() {
    }
   }, [image])
 
+  const updatecompanydata = (e) => {
+    setcompany({...company,[e.target.id] : e.target.value})
+  }
+
   console.log(company)
   
 
@@ -133,14 +137,11 @@ function Companyprofile() {
               <div className='flex justify-end p-2'>
                 <IoMdClose size={25} className='cursor-pointer hover:text-blue-500' onClick={handleclose} /></div>
               <form action="" onSubmit={handleSubmit(handlesubmit)} className='flex flex-col p-4 gap-3'>
-                <label htmlFor="Companyname" className='font-medium text-lg'>Company Name</label>
-                <input type="text" className='focus:outline-none bg-gray-100 rounded-lg px-2 py-2' {...register("Companyname", { required: { value: true, message: "This field is required ! " } })} id='Companyname' />
-                {errors.Companyname && <div className='text-red-500'>{errors.Companyname.message}</div>}
                 <label htmlFor="Phonenumber" className='font-medium text-lg'>Phone number</label>
-                <input type="number" className='focus:outline-none bg-gray-100 rounded-lg px-2 py-2' {...register("Phonenumber", { required: { value: true, message: "This field is required ! " } })} id='Companyname' />
+                <input type="number" className='focus:outline-none bg-gray-100 rounded-lg px-2 py-2' {...register("Phonenumber", { required: { value: true, message: "This field is required ! " } })} id='Phonenumber' value={company.Phonenumber} onChange={updatecompanydata}/>
                 {errors.Phonenumber && <div className='text-red-500'>{errors.Phonenumber.message}</div>}
                 <label htmlFor="Address" className='font-medium text-lg'>Address</label>
-                <textarea type="text" className='focus:outline-none bg-gray-100 rounded-lg px-2 py-2' {...register("Address", { required: { value: true, message: "This field is required ! " } })} id='Companyname' ></textarea>
+                <textarea type="text" className='focus:outline-none bg-gray-100 rounded-lg px-2 py-2' {...register("Address", { required: { value: true, message: "This field is required ! " } })} id='Address' value={company.Address} onChange={updatecompanydata}></textarea>
                 {errors.Address && <div className='text-red-500'>{errors.Address.message}</div>}
                 <input type="submit" className='bg-gray-900 text-white font-bold py-2 rounded-lg cursor-pointer disabled:bg-gray-400' disabled={isSubmitting} />
               </form>
