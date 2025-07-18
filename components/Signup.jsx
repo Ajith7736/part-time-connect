@@ -25,6 +25,7 @@ function Signup() {
   const [filename, setfilename] = useState("")
   const [eyevisible, seteyevisible] = useState(false)
   const passref = useRef()
+  const userlog = localStorage.getItem("user")
   const navigate = useNavigate()
   const [finaltext, setfinaltext] = useState(null)
   const [Fullname, setFullname] = useState(null)
@@ -32,7 +33,11 @@ function Signup() {
   const [showotp, setshowotp] = useState(false)
   const [isloading, setisloading] = useState(false)
 
-
+  useEffect(() => {
+    if (userlog == "Loggedin") {
+      navigate("/dashboard")
+    }
+  }, [])
 
 
   useEffect(() => {

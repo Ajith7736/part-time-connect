@@ -25,6 +25,13 @@ function Login() {
   const userlog = localStorage.getItem("user")
   const userdata = localStorage.getItem("userdata") && JSON.parse(localStorage.getItem("userdata"))
 
+  useEffect(() => {
+    if(userlog == "Loggedin"){
+      navigate("/dashboard")
+    }
+  }, [])
+  
+
   // calling the signuser function
 
   useEffect(() => {
