@@ -138,6 +138,7 @@ function Postjob() {
           </select>
           {errors.District && <span className="text-red-600 text-sm">{errors.District.message}</span>}
 
+          <label htmlFor="Date">Date : </label>
           <input
             type="date"
             {...register("Date", validationRule)}
