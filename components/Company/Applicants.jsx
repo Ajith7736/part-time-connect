@@ -185,7 +185,7 @@ function Applicants() {
             <div className='text-3xl font-bold logo text-center  lg:text-4xl'>{job.title}</div>
             <div id={job.title} className=' bg-white m-3 rounded-lg py-4 px-6 flex flex-col gap-2 w-[76vw] lg:w-[70vw] items-start'>
               <div className='font-medium flex gap-1 items-center'>
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-2'>
                   Job title :<div>{edittingjobid === job._id ? <><input type="text" id='title' value={job.title} onChange={(e) => { handlechange(e, job._id) }} className='bg-gray-100 focus:outline-none p-1 rounded-lg' /></> : job.title}</div>
                 </div>
               </div>
