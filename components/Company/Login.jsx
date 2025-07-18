@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function CompanyLogin() {
    const {
@@ -25,9 +26,8 @@ function CompanyLogin() {
   }, [Formdata])
   
   const signcompany = async ()=>{
-    // console.log(Formdata)
     try {
-        let res = await fetch(`http://localhost:3000/api/company/Login`, {
+        let res = await fetch(`${BASE_URL}/api/company/Login`, {
           method: "POST", 
           headers: {
             "Content-Type": "application/json"
