@@ -46,7 +46,7 @@ function Profile() {
         if (image) {
             const updateddata = { ...userdata, Profilepic: image }
             localStorage.setItem("userdata", JSON.stringify(updateddata))
-            navigate(`/${username}`);
+            window.location.reload()
         }
     }, [image])
 
