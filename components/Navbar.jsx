@@ -84,7 +84,7 @@ function Navbar() {
                                 <NavLink to={"/favourite"} className={(e) => { return e.isActive ? "text-purple-600 relative" : "text=black relative" }}><FaRegHeart size={28} /><div className='absolute  font-bold -top-3 left-4 text-purple-600 bg-purple-200 rounded-full px-1'>{totalwish == 0 ? "" : totalwish}</div></NavLink>
                                 <NavLink to={"/jobs"} className={(e) => { return e.isActive ? "text-purple-600 relative" : "text=black relative" }}><BsSuitcaseLg size={28} /><div className='absolute bg-purple-200 -top-3 left-5 text-purple-600 text-center rounded-full px-1 font-bold '>{totaljobs == 0 ? "" : totaljobs}</div></NavLink>
                             </div>
-                            <NavLink to={`/${userdata.Username}`} className={(e) => { return e.isActive ? "outline-3 outline-purple-500 rounded-full" : "outline-none" }}><img className="w-10 h-10 rounded-full" src={`/${userdata?.Profilepic}`} alt="Rounded avatar" /></NavLink>
+                            <NavLink to={`/${userdata.Username}`} className={(e) => { return e.isActive ? "outline-3 outline-purple-500 rounded-full" : "outline-none" }}><img className="w-10 h-10 rounded-full" src={userdata?.Profilepic === "man.png" ? `/${userdata?.Profilepic}` : `${userdata?.Profilepic}` } alt="Rounded avatar" /></NavLink>
 
                         </div>
                             <NavLink to={'/login'}><button className='bg-purple-500 px-2 py-1 text-white rounded-lg cursor-pointer' onClick={handlelogout}>Logout</button></NavLink></>
@@ -97,7 +97,7 @@ function Navbar() {
                                 <NavLink to={"/favourite"} className={(e) => { return e.isActive ? "text-purple-600 relative" : "text-black relative" }}><FaRegHeart size={23} className='max-[450px]:size-5' /><div className='absolute  font-bold -top-3 left-3 text-purple-600 bg-purple-200 rounded-full px-1'>{totalwish == 0 ? "" : totalwish}</div></NavLink>
                                 <NavLink to={"/jobs"} className={(e) => { return e.isActive ? "text-purple-600 relative" : "text-black relative" }}><BsSuitcaseLg size={23} className='max-[450px]:size-5' /><div className='absolute bg-purple-200 -top-3 left-4 text-purple-600 text-center rounded-full px-1 font-bold '>{totaljobs == 0 ? "" : totaljobs}</div></NavLink>
                             </div>
-                            <NavLink to={`/${userdata.Username}`} className={(e) => { return e.isActive ? "outline-3 outline-purple-500 rounded-full" : "outline-none" }}><img className="w-6 h-6 rounded-full" src={`/${userdata?.Profilepic}`} alt="Rounded avatar" /></NavLink>
+                            <NavLink to={`/${userdata.Username}`} className={(e) => { return e.isActive ? "outline-3 outline-purple-500 rounded-full" : "outline-none" }}><img className="w-6 h-6 rounded-full" src={userdata?.Profilepic === "man.png" ? `/${userdata?.Profilepic}` : `${userdata?.Profilepic}` } alt="Rounded avatar" /></NavLink>
                         </div></>}
                         <div className='block md:hidden cursor-pointer' onClick={handlehamburger}>{drop ? <GiHamburgerMenu className='size-6' /> : <IoMdClose className='size-6' />}</div>
                     </div>
