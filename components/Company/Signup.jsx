@@ -74,7 +74,7 @@ function CompanySignup() {
             {showotp && !isSubmitting && <div className='bg-white/50 fixed w-full h-[90vh] flex justify-center items-center'><Companyotp Email={Formdata?.Email} /></div>}
             {isSubmitting && <div className='text-center fixed w-full h-[90vh]'><Loading /></div>}
             <div className='w-full h-screen bg-gray-100 flex  justify-center items-center select-none'>
-                <div className='bg-white w-[100vw] h-[100vh] lg:w-[40vw] md:w-[60vw] md:h-auto shadow-xl p-4 pt-15 rounded-xl'>
+                <div className='bg-white w-[100vw] h-screen lg:w-[40vw] md:w-[60vw] md:h-auto shadow-xl p-4 pt-15 rounded-xl'>
                     <div className='text-center text-4xl text-purple-500 font-bold logo'>Register Company</div>
                     <form action="" onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3 md:gap-2 mt-10'>
                         <label htmlFor="Companyname" className='font-medium text-xl '>Company Name</label>
