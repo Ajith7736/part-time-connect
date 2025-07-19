@@ -23,7 +23,7 @@ router.post("/getjobs", verifytoken, async (req, res) => {
   try {
     let jobs = await Jobs.find({})
     if (jobs) {
-      return res.status(201).json({ success: "jobs fetched successfully", jobs })
+      return res.status(200).json({ success: "jobs fetched successfully", jobs })
     } else {
       return res.status(400).json({ error: "Not found any jobs" })
     }
