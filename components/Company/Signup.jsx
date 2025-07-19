@@ -40,7 +40,7 @@ function CompanySignup() {
             }, body: JSON.stringify(Formdata)
         })
         let data = await res.json()
-        if (res.status == 201) {
+        if (res.status == 200) {
             toast.success(data.success)
             setshowotp(true)
             setisloading(false)

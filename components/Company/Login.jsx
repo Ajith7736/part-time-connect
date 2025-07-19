@@ -36,7 +36,7 @@ function CompanyLogin() {
         })
         const data = await res.json();
         const user = await data.result;
-        if(res.status == 201){
+        if(res.status == 200){
           toast.success(data.success)
           localStorage.setItem("company","Loggedin")
           localStorage.setItem("companydata",JSON.stringify(user))

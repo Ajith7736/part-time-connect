@@ -31,7 +31,7 @@ function Favourites() {
         }, body: JSON.stringify({ userId: user.id, jobId: id })
       })
       let data = await res.json()
-      if (res.status == 201) {
+      if (res.status == 200) {
         toast.success(data.success)
       }
       if (res.status == 400 || res.status == 500) {

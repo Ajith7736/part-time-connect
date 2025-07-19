@@ -23,6 +23,7 @@ function Dashboard() {
     const [wishlist, setwishlist] = useState([])
     const timeref = useRef(null)
     const locationref = useRef(null)
+    const userlog = localStorage.getItem("user") 
     const user = localStorage.getItem("userdata") ? JSON.parse(localStorage.getItem("userdata")) : {}
 
     // fetches job and wishlist on the first render
@@ -31,6 +32,13 @@ function Dashboard() {
         fetchjobs()
         fetchwishlist()
     }, [])
+
+    useEffect(() => {
+      if (userlog === "Loggedout"){
+        navigate("/login")
+      }
+    }, [userlog])
+    
 
     // add the job to wishlist
 
@@ -59,7 +67,7 @@ function Dashboard() {
             headers: { "Authorization": `Bearer ${token}` }
         })
         let data = await res.json()
-        if (res.status == 201) {
+        if (res.status == 200) {
             setjobs(data.jobs)
             setisloading(false)
         } else {
@@ -84,8 +92,12 @@ function Dashboard() {
             body: JSON.stringify({ userId: user.id })
         })
         let data = await res.json()
-        if (res.status == 201) {
+        if (res.status == 200) {
             return setwishlist(data.result)
+        }
+        if (res.status == 401) {
+            localStorage.setItem("user", "Loggedout")
+            navigate("/login")
         }
     }
 
@@ -171,7 +183,7 @@ function Dashboard() {
                 </div>
                 <div>
                     <label htmlFor="location" className='text-blue-600 bg-white w-18  absolute top-12.5 left-8 text-center font-medium'>Location</label>
-                    <select ref={locationref} name="location" id="location" defaultValue=""  onChange={handlelocation} className='w-full mt-5 outline outline-gray-300 p-4 rounded-md focus:outline-2 focus:outline-blue-400' >
+                    <select ref={locationref} name="location" id="location" defaultValue="" onChange={handlelocation} className='w-full mt-5 outline outline-gray-300 p-4 rounded-md focus:outline-2 focus:outline-blue-400' >
                         <option value="" disabled hidden >Select District</option>
                         <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                         <option value="Kollam">Kollam</option>
