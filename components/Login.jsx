@@ -52,6 +52,7 @@ function Login() {
       })
       const data = await res.json();
       const user = data.result
+      console.log(res.status)
       if (res.status == 200) {
         toast.success(data.success)
         localStorage.setItem("user", "Loggedin")
