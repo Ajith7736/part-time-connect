@@ -39,7 +39,7 @@ router.post("/company/signup", async (req, res) => {
           datatemp[data.Email].otp = null
         }
       }, 120000);
-      return res.status(201).json({ success: "otp sent !" })
+      return res.status(200).json({ success: "otp sent !" })
     } else {
       return res.status(400).json({ error: "Couldnt sent otp !" })
     }

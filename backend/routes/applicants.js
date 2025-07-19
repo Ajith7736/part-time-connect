@@ -9,11 +9,11 @@ router.post("/applicant", verifytoken, async (req, res) => {
         if (data) {
             const existingapplicant = await Applicant.findOne({ userId: data.userId, jobId: data.jobId, companyId: data.companyId })
             if (existingapplicant) {
-                return res.status(201).json({ success: "Applied Successfully" })
+                return res.status(200).json({ success: "Applied Successfully" })
             }
             const result = await Applicant.create(data)
             if (result) {
-                return res.status(201).json({ success: "Applied successfully", data: result })
+                return res.status(200).json({ success: "Applied successfully", data: result })
             } else {
                 return res.status(400).json({ error: "Couldnt create data" })
             }
@@ -34,7 +34,7 @@ router.delete("/applicant", verifytoken, async (req, res) => {
         }
         const result = await Applicant.deleteOne(data)
         if (result.deletedCount > 0) {
-            return res.status(201).json({ success: "Application canceled" })
+            return res.status(200).json({ success: "Application canceled" })
         } else {
             return res.status(400).json({ error: "Couldnt delete it" })
         }

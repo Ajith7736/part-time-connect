@@ -7,12 +7,12 @@ router.post("/wishlist", verifytoken, async (req, res) => {
         const data = req.body
         const existingapplicant = await Wishlist.findOne({ userId: data.userId, jobId: data.jobId })
         if (existingapplicant) {
-            return res.status(201).json({ success: "Added to wislist" })
+            return res.status(200).json({ success: "Added to wislist" })
         }
         if (data) {
             const result = await Wishlist.create(data)
             if (result) {
-              return  res.status(201).json({ success: "Added to wishlist", data: result })
+              return  res.status(200).json({ success: "Added to wishlist", data: result })
             } else {
               return  res.status(400).json({ error: "Couldnt create data" })
             }
@@ -33,7 +33,7 @@ router.delete("/wishlist", verifytoken, async (req, res) => {
         }
         const result = await Wishlist.deleteOne({ userId, jobId })
         if (result.deletedCount > 0) {
-            return res.status(201).json({ success: "Wishlist deleted" })
+            return res.status(200).json({ success: "Wishlist deleted" })
         } else {
             return res.status(404).json({ error: "Wishlist not found" });
         }
@@ -55,7 +55,7 @@ router.post("/getwishlist", verifytoken, async (req, res) => {
             return res.status(400).json({ error: "Wishlist not found" })
         }
         if (result.length > 0) {
-            return res.status(201).json({ success: "Wishlist found", result})
+            return res.status(200).json({ success: "Wishlist found", result})
         }
     } catch (err) {
         console.error(err);

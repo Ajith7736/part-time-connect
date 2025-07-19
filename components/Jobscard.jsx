@@ -34,13 +34,14 @@ function Jobscard({ item }) {
                 body: JSON.stringify(wishdata)
             })
             let data = await res.json()
-            if (res.status == 201) {
+            if (res.status == 200) {
                 toast.success(data.success)
             }
-            if (res.status == 401 || res.status == 500) {
+            if (res.status == 400 || res.status == 500) {
                 toast.error(data.error)
             }
             if (res.status == 401) {
+                toast.errordata
                 localStorage.setItem("user", "Loggedout")
                 navigate("/login")
             }
@@ -61,10 +62,10 @@ function Jobscard({ item }) {
                 }, body: JSON.stringify({ userId: user.id, jobId: item._id })
             })
             let data = await res.json()
-            if (res.status == 201) {
+            if (res.status == 200) {
                 toast.success(data.success)
             }
-            if (res.status == 401 || res.status == 500) {
+            if (res.status == 400 || res.status == 500) {
                 toast.error(data.error)
             }
             if (res.status == 401) {
@@ -88,10 +89,10 @@ function Jobscard({ item }) {
                 }, body: JSON.stringify({ userId: user.id, jobId: item._id, companyId: item.Companyid })
             })
             let data = await res.json()
-            if (res.status == 201) {
+            if (res.status == 200) {
                 toast.success(data.success)
             }
-            if (res.status == 401 || res.status == 500) {
+            if (res.status == 400 || res.status == 500) {
                 toast.error(data.error)
             }
             if (res.status == 401) {
@@ -115,7 +116,7 @@ function Jobscard({ item }) {
                 }, body: JSON.stringify({ userId: user.id, jobId: item._id })
             })
             let data = await res.json()
-            if (res.status == 201) {
+            if (res.status == 200) {
                 toast.success(data.success)
             }
             if (res.status == 400 || res.status == 500) {
