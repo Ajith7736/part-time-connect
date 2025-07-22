@@ -68,6 +68,7 @@ function Navbar() {
         localStorage.removeItem("userdata")
         hamburger.current.style = "top :-50; transition:all .4s ease-out"
         setdrop(!drop)
+        window.location.reload();
     }
 
 
