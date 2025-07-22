@@ -97,17 +97,34 @@ router.post("/resend-otp", async (req, res) => {
   }
 })
 
-router.put("/update",verifytoken, async (req, res) => {
+router.put("/update", verifytoken, async (req, res) => {
   try {
     const { id, Username, Phonenumber, Address } = req.body
     const result = await User.findByIdAndUpdate(id, { Username, Phonenumber, Address }, { new: true })
     if (result) {
-      return res.status(200).json({ success: "Updated Successfully", user: {Address : result.Address , Phonenumber : result.Phonenumber , Username : result.Username } })
+      return res.status(200).json({ success: "Updated Successfully", user: { Address: result.Address, Phonenumber: result.Phonenumber, Username: result.Username } })
     }
     return res.status(400).json({ error: "Couldnt update" })
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Server error" });
+  }
+})
+
+router.put("/updatepic", verifytoken, async (req, res) => {
+  try {
+    const { id, data } = req.body;
+    if (!data) {
+      return res.status(400).json({ error: "Didnt recieve the data" })
+    }
+    const update = await User.findByIdAndUpdate(id, { Profilepic: data }, { new: true })
+    if (update) {
+      return res.status(200).json({ success: "Update Successfully" })
+    }
+    return res.status(400).json({ error: "Coudnt update the profilepic" })
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Server error" })
   }
 })
 

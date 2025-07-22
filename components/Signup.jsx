@@ -129,7 +129,7 @@ function Signup() {
       {showotp && !isSubmitting && <div className='bg-white/50 fixed w-full h-[90vh] flex justify-center items-center'><Otp Email={Formdata?.Email} /></div>}
       <div className=' bg-gray-100 flex justify-center items-center select-none'>
         <div className='bg-white shadow-lg w-full md:w-[80vw] lg:my-10 lg:w-[60vw]  rounded-2xl px-4 py-6 flex flex-col gap-10 justify-center'>
-          <h1 className='text-center text-4xl logo text-purple-600'>USER REGISTRATION</h1>
+          <h1 className='text-center text-3xl md:text-4xl logo text-purple-600'>USER REGISTRATION</h1>
           <form action="" className='flex flex-col gap-3' onSubmit={handleSubmit(onSubmit)}>
             <div className='flex flex-col gap-5 lg:flex-row lg:justify-evenly lg:gap-4'>
               <div className='section-1 flex flex-col gap-2 lg:w-1/2'>

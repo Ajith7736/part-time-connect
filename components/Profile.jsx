@@ -39,13 +39,15 @@ function Profile() {
         }
     }, [newuserdata])
 
-    
+
     // update the userdata
 
     useEffect(() => {
         if (image) {
             const updateddata = { ...userdata, Profilepic: image }
             localStorage.setItem("userdata", JSON.stringify(updateddata))
+            updatepic(image)
+            // navigate(`/${userdata.Username}`)
             window.location.reload()
         }
     }, [image])
@@ -97,13 +99,42 @@ function Profile() {
             if (res.status === 400) {
                 toast.error(data.error)
             }
+            if (res.status === 401) {
+                localStorage.setItem("user", "Loggedout")
+                navigate("/login")
+            }
         } catch (err) {
             console.error(err)
         }
     }
 
     const handleedit = (e) => {
-        setuserdata({...userdata,[e.target.id] : e.target.value})
+        setuserdata({ ...userdata, [e.target.id]: e.target.value })
+    }
+
+
+    const updatepic = async (picdata) => {
+        console.log(picdata)
+        let res = await fetch(`${BASE_URL}/api/updatepic`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ id: userdata.id, data: picdata })
+        })
+        let data = await res.json()
+        if (res.status === 200) {
+            console.log(data.success)
+            return toast.success(data.success)
+        }
+        if (res.status === 400) {
+            return toast.error(data.error)
+        }
+        if (res.status === 401) {
+            localStorage.setItem("user", "Loggedout")
+            navigate("/login")
+        }
     }
 
 
@@ -115,7 +146,7 @@ function Profile() {
                 <div className="rounded-t-3xl h-[40vh] lg:h-[50vh] w-full overflow-hidden flex justify-center">
                     <img src="banner.jpg" className="object-cover object-top md:object-bottom w-full h-full " alt="Gojo from Jujutsu Kaisen" />
                     <label htmlFor="profilepic" className='absolute top-[43vh]'>
-                        <img src={userdata.Profilepic} className='w-30 h-30 lg:w-50 lg:h-50  outline-purple-500 outline-4 rounded-full shadow-lg' alt="" />
+                        <img src={userdata.Profilepic} className='w-30 h-30 lg:w-50 lg:h-50 object-cover  outline-purple-500 outline-4 rounded-full shadow-lg' alt="" />
                         <div className='bg-purple-500 absolute bottom-0 right-0 p-2 rounded-full'><FiEdit className='text-white size-5' /></div>
                     </label>
 
@@ -136,13 +167,13 @@ function Profile() {
                         </div>
 
                         <label htmlFor="Username" className='text-lg font-medium'>Username</label>
-                        <input type="text" {...register("Username",{required : { value : true , message : "This field is required"}})} id='Username' className='bg-white px-2 py-2 rounded-xl focus:outline-none' />
+                        <input type="text" {...register("Username", { required: { value: true, message: "This field is required" } })} id='Username' className='bg-white px-2 py-2 rounded-xl focus:outline-none' />
                         {errors.Username && <div className='text-red-500 '>{errors.Username.message}</div>}
                         <label htmlFor="Phonenumber" className='text-lg font-medium'>Phonenumber</label>
-                        <input type="number" {...register("Phonenumber",{required : { value : true , message : "This field is required"}})} id='Phonenumber' className='bg-white px-2 py-2 rounded-xl focus:outline-none' value={userdata.Phonenumber} onChange={handleedit} />
+                        <input type="number" {...register("Phonenumber", { required: { value: true, message: "This field is required" } })} id='Phonenumber' className='bg-white px-2 py-2 rounded-xl focus:outline-none' value={userdata.Phonenumber} onChange={handleedit} />
                         {errors.Phonenumber && <div className='text-red-500 '>{errors.Phonenumber.message}</div>}
                         <label htmlFor="Address" className='text-lg font-medium'>Address</label>
-                        <textarea name="" id="Address" {...register("Address",{required : { value : true , message : "This field is required"}})} className='bg-white px-2 py-2 rounded-xl focus:outline-none h-[100px]' value={userdata.Address} onChange={handleedit}></textarea>
+                        <textarea name="" id="Address" {...register("Address", { required: { value: true, message: "This field is required" } })} className='bg-white px-2 py-2 rounded-xl focus:outline-none h-[100px]' value={userdata.Address} onChange={handleedit}></textarea>
                         {errors.Address && <div className='text-red-500 '>{errors.Address.message}</div>}
                         <input type="submit" className='cursor-pointer hover:bg-gray-700 bg-gray-800 text-white font-bold p-2 rounded-lg my-3' />
                     </form>

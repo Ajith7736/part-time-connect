@@ -34,8 +34,7 @@ router.post("/Login", async (req, res) => {
                 Email: user.Email,
                 Phonenumber: user.Phonenumber,
                 Address: user.Address,
-                Profilepic: "man.png"
-            }
+                Profilepic: user.Profilepic            }
         })
     }
     catch (err) {
