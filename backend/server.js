@@ -14,7 +14,7 @@ const port = process.env.PORT || 5050
 
 connectdb()
 
-app.use(cors());
+// app.use(cors());
 
 app.use(cors({
   origin: ['https://part-time-connect.vercel.app'], // or use "*" temporarily to test
