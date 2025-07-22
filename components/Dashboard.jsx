@@ -37,7 +37,7 @@ function Dashboard() {
       if (userlog === "Loggedout"){
         navigate("/login")
       }
-    }, [userlog])
+    }, [])
     
 
     // add the job to wishlist

@@ -16,6 +16,14 @@ connectdb()
 
 app.use(cors());
 
+app.use(cors({
+  origin: ['https://part-time-connect.vercel.app'], // or use "*" temporarily to test
+  credentials: true, // only if you're using cookies
+}));
+
+app.options('*', cors()); // handles preflight
+
+
 app.use(express.json());
 
 
