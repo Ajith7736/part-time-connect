@@ -201,7 +201,7 @@ function Signup() {
           </form>
           <div className='flex flex-col gap-3'>
             <div className='text-center'>Already have an account ? <Link to={'/login'} className='text-red-600 hover:underline'>Login</Link></div>
-            <div className='text-center'>Sign up as Company ? <Link to={'/company/signup'} className='text-red-600 hover:underline'>Company</Link></div>
+            <div className='text-center'>Sign up as Company ? <Link to={'/company'} className='text-red-600 hover:underline'>Company</Link></div>
           </div>
         </div>
       </div>
