@@ -114,7 +114,6 @@ function Profile() {
 
 
     const updatepic = async (picdata) => {
-        console.log(picdata)
         let res = await fetch(`${BASE_URL}/api/updatepic`, {
             method: "PUT",
             headers: {
