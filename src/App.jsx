@@ -18,6 +18,11 @@ import Applicants from '../components/Company/Applicants'
 import Postjob from '../components/Company/Postjob'
 import Companyprofile from '../components/Company/Companyprofile'
 import Jobdetails from '../components/Jobdetails'
+import AdminLayout from '../components/Admin/AdminLayout'
+import Adminlogin from '../components/Admin/Adminlogin'
+import Admindashboard from '../components/Admin/Admindashboard'
+import Adminusers from '../components/Admin/Adminusers'
+import Admincompany from '../components/Admin/Admincompany'
 
 function App() {
 
@@ -46,6 +51,14 @@ function App() {
           <Route path="postjob" element={<><Postjob /></>} />
           <Route path=":companyname" element={<><Companyprofile /></>} />
         </Route>
+
+        <Route path='/admin' element={<><Adminlogin/></>}/>
+
+        <Route path='/admin' element={<><AdminLayout/></>}>
+            <Route path='dashboard' element={<><Admindashboard/></>}/>
+            <Route path='users' element={<><Adminusers/></>}/>
+            <Route path='company' element={<><Admincompany/></>}/>
+          </Route>
       </Routes>
     </>
   )
