@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { deleteappliedjobs } from '../src/redux/appliedJobSlice'
+import { deleteappliedjobs } from '../../src/redux/appliedJobSlice'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { clearappliedjobs } from '../src/redux/appliedJobSlice'
+import { clearappliedjobs } from '../../src/redux/appliedJobSlice'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Jobs() {

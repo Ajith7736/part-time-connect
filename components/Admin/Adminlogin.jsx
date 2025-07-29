@@ -36,6 +36,7 @@ function Adminlogin() {
         let data = await res.json()
         if(res.status === 200){
             toast.success(data.success)
+            localStorage.setItem('Admin','Loggedin')
             navigate('/admin/dashboard')
         }
         if(res.status === 400){

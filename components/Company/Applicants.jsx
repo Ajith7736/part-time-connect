@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useMemo } from 'react'
-import Jobscard from '../Jobscard'
+import Jobscard from '../User/Jobscard'
 import { CiEdit } from "react-icons/ci";
 import { useRef } from 'react'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;

@@ -7,7 +7,7 @@ import { useMemo } from 'react';
 import Jobscard from './Jobscard';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addtowishlist } from '../src/redux/wishlistSlice';
+import { addtowishlist } from '../../src/redux/wishlistSlice';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Dashboard() {

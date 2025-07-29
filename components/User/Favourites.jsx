@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux';
-import { removefromwishlist } from '../src/redux/wishlistSlice';
-import { clearwishlist } from '../src/redux/wishlistSlice';
+import { removefromwishlist } from '../../src/redux/wishlistSlice';
+import { clearwishlist } from '../../src/redux/wishlistSlice';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';

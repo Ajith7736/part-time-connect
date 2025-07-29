@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaRegHeart } from "react-icons/fa";
 import { BsSuitcaseLg } from "react-icons/bs";
 import { useSelector } from 'react-redux';
-import { clearappliedjobs } from '../src/redux/appliedJobSlice';
-import { clearwishlist } from '../src/redux/wishlistSlice';
+import { clearappliedjobs } from '../../src/redux/appliedJobSlice';
+import { clearwishlist } from '../../src/redux/wishlistSlice';
 import { useDispatch } from 'react-redux';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 

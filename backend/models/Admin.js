@@ -8,6 +8,10 @@ let AdminSchema = new mongoose.Schema({
     Password : {
         required : true,
         type : String
+    },
+    Role : {
+        type : String,
+        default : "Admin"
     }
 })
 

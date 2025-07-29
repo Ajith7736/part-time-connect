@@ -1,28 +1,36 @@
 const mongoose = require("mongoose")
 
 const CompanySchema = new mongoose.Schema({
-    Companyname : {
+    Companyname: {
+        type: String,
+        required: true
+    },
+    Email: {
+        type: String,
+        required: true
+    },
+    Password: {
+        type: String,
+        required: true
+    },
+    Address: {
+        type: String,
+        required: true
+    },
+    Phonenumber: {
+        type: Number,
+        required: true
+    },
+    Profilepic: {
         type : String,
-        required : true
+        default : "man.png"
     },
-    Email : {
-        type : String,
-        required : true
-    },
-    Password : {
-        type : String,
-        required : true
-    },
-    Address : {
-        type : String,
-        required : true
-    },
-    Phonenumber : {
-        type : Number,
-        required : true
-    },
+    role: {
+        type: String,
+        default: "Company"
+    }
 })
 
-const Company = mongoose.model("Company",CompanySchema)
+const Company = mongoose.model("Company", CompanySchema)
 
 module.exports = Company;

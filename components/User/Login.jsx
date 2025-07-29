@@ -7,8 +7,8 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { clearwishlist } from '../src/redux/wishlistSlice'
-import { clearappliedjobs } from '../src/redux/appliedJobSlice'
+import { clearwishlist } from '../../src/redux/wishlistSlice'
+import { clearappliedjobs } from '../../src/redux/appliedJobSlice'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Login() {

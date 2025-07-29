@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
 import toast from 'react-hot-toast'
-import Loading from '../Loading'
+import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 

@@ -39,6 +39,10 @@ const UserSchema = new mongoose.Schema({
         type : String,
         default : "man.png"
     }
+    , Role : {
+        type : String,
+        default : "User"
+    }
 })
 
 const User = mongoose.model('user', UserSchema);

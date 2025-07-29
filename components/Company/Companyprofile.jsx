@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Notfoundpage from '../Notfoundpage'
+import Notfoundpage from '../User/Notfoundpage'
 import { useForm } from 'react-hook-form'
 import { IoMdClose } from "react-icons/io";
 import { useState, useEffect, useRef } from 'react';
