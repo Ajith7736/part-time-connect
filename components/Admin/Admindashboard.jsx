@@ -2,7 +2,7 @@ import React from 'react'
 
 function Admindashboard() {
   return (
-    <div className='py-10 w-[90vw]'>
+    <div className='py-10 w-[85vw]'>
       <div className='text-3xl logo text-center'>DASHBOARD</div>
       <div className='flex flex-col md:flex-row md:flex-wrap md:justify-center mt-10 items-center gap-10'>
         <div className='bg-white w-[50vw] md:w-[30vw] lg:w-[20vw] h-[18vh] p-6 rounded-xl flex flex-col justify-center shadow-lg gap-4'>
