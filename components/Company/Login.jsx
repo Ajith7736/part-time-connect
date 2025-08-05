@@ -17,7 +17,14 @@ function CompanyLogin() {
   } = useForm()
 
   const [Formdata, setFormdata] = useState(null)
+  const companylog = localStorage.getItem("company")
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(companylog === "Loggedin"){
+      navigate("/company/dashboard")
+    }
+  },[])
 
   useEffect(() => {
     if(Formdata){

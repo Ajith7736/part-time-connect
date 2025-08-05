@@ -215,7 +215,7 @@ function Dashboard() {
                     </select>
                 </div>
             </div>
-            <div className='bg-gray-100 min-h-[90vh] h-auto py-10 px-8 '>
+            <div className='bg-gray-100 min-h-[90vh] h-auto py-10 px-8'>
                 <div className='text-2xl font-bold logo text-center text-purple-600'>
                     JOB LISTINGS
                 </div>

@@ -86,11 +86,11 @@ function Signup() {
   // set the formdata and match the id card name with the specified Full name
 
   const onSubmit = async (data) => {
-    if (Fullname == finaltext.name) {
+    if (finaltext.matching == true) {
       await delay(1)
       setFormdata({ ...data, Idproof: data.Idproof[0].name })
     } else {
-      toast.error("Idproof and Full name does not match")
+      toast.error("Full name not found in Uploaded Id card,Please check the image quality and try again")
     }
   }
 
@@ -101,18 +101,23 @@ function Signup() {
   // convert the image into text format
 
   const readTextFromImage = async (file) => {
-    const worker = await createWorker("eng")
-    const { data: { text } } = await worker.recognize(file)
-    await worker.terminate()
-    return text
+    try {
+      const worker = await createWorker("eng")
+      const { data: { text } } = await worker.recognize(file)
+      await worker.terminate()
+      return text
+    }catch(err){
+      toast.error("Failed to read ID Proof image");
+      return "";
+    }
   }
 
   // To check whether Fullname and image text matches when both the image text and full name changes accordingly
 
   useEffect(() => {
     if (Fullname && Fulltext) {
-      const regex = new RegExp(Fullname);
-      const match = Fulltext.match(regex)
+      const normalize = (str) => str.toLowerCase().replace(/\s+/g, '');
+      const match = normalize(Fulltext).includes(normalize(Fullname));
       if (match) {
         setfinaltext({ name: match[0], matching: true })
       } else {

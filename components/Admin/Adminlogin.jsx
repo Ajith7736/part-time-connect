@@ -10,6 +10,7 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Adminlogin() {
     const navigate = useNavigate()
+    const adminlog = localStorage.getItem("Admin")
     const [admindata, setadmindata] = useState(null)
     const {
         register,
@@ -17,6 +18,12 @@ function Adminlogin() {
         watch,
         formState: { errors, isSubmitting },
     } = useForm()
+
+    useEffect(()=>{
+        if(adminlog === "Loggedin"){
+            navigate("/admin/dashboard")
+        }
+    },[])
 
     useEffect(() => {
         if(admindata){

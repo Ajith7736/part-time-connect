@@ -10,6 +10,7 @@ import { IoEye } from 'react-icons/io5'
 import { IoMdEyeOff } from 'react-icons/io'
 import { useRef } from 'react'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+import { useNavigate } from 'react-router-dom'
 
 function CompanySignup() {
     const {
@@ -23,7 +24,17 @@ function CompanySignup() {
     const [showotp, setshowotp] = useState(false)
     const [isloading, setisloading] = useState(false)
     const [eyevisible, seteyevisible] = useState(false)
+    const navigate = useNavigate()
     const passref = useRef()
+    const companylog = localStorage.getItem("company")
+
+    useEffect(()=>{
+        if(companylog === "Loggedin"){
+          navigate("/company/dashboard")
+        }
+      },[])
+    
+
     useEffect(() => {
         if (Formdata) {
             submitdata()

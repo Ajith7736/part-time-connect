@@ -3,6 +3,7 @@ const User = require("../models/Users.js")
 const nodemailer = require("nodemailer");
 const bcrypt = require("bcrypt");
 const verifytoken = require("../middlewares/verifytoken.js");
+const Blocklist = require("../models/Bloclist.js")
 require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
@@ -18,6 +19,10 @@ router.post("/Signup", async (req, res) => {
   try {
     const userdata = req.body
     const hashedPassword = await bcrypt.hash(userdata.Password, 10)
+    const blockeduser = await Blocklist.findOne({ Email: userdata.Email })
+    if(blockeduser){
+      return res.status(400).json({error : "This Email has been Blocked"})
+    }
     const email = await User.findOne({ Email: userdata.Email })
     if (email) {
       return res.status(400).json({ error: "Email Already Exist" })
