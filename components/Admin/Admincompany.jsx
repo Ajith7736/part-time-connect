@@ -35,7 +35,7 @@ function Admincompany() {
 
 
   return (
-    <div className='w-[90vw] p-5 relative'>
+    <div className='w-[85vw] p-5 relative'>
       {dailogbox && <>
         <div className='fixed z-1 lg:left-[40%]'>
           <div className='bg-white h-[30vh] max-[450px]:h-[25vh] max-[390px]:h-[35vh] w-[80vw] lg:w-[30vw] shadow-md rounded-xl p-10 flex flex-col items-center justify-center gap-8'>
