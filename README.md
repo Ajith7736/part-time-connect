@@ -102,11 +102,13 @@ Follow these steps to run the project on your machine:
    git clone https://github.com/Ajith7736/part-time-connect.git
    cd part-time-connect
 
-2. **Install Dependencies**
+2. **Install Dependencies** 
+
   for backend(server):
    ```bash
    cd backend
    npm install
+ ```
 
   for frontend(client):
    ```bash
