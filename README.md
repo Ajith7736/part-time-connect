@@ -81,3 +81,14 @@ Make sure you have:
    ```bash
    git clone https://github.com/Ajith7736/part-time-connect.git
    cd part-time-connect
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables  
+to your `.env` file in the `backend` folder:
+
+- `MONGO_URI` → MongoDB connection string  
+- `JWT_SECRET` → Secret key for JWT authentication  
+- `PORT` → Port number
+- `USER_EMAIL` → Admin email from which the otp will be sent
+- `UsSER_PASS` → Password for the use of email
