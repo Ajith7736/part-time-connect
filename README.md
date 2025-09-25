@@ -103,14 +103,12 @@ Follow these steps to run the project on your machine:
    cd part-time-connect```
 
 2. **Install Dependencies** 
-
-  for backend(server):
+   for backend(server):
    ```bash
    cd backend
    npm install
    ```
-
-  for frontend(client):
+   for frontend(client):
    ```bash
    cd client
    npm install
