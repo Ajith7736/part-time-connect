@@ -125,9 +125,7 @@ Follow these steps to run the project on your machine:
    cd backend
    nodemon server.js
    ```
-
-  This will run backend on port 3000
-
+   This will run backend on port 3000
 
 
 5. **Start the frontend**
@@ -135,8 +133,7 @@ Follow these steps to run the project on your machine:
    ```bash
    npm run dev
    ```
- 
-  This will run frontend on port 5173
+   This will run frontend on port 5173
 
 
 
