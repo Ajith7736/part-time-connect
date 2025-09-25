@@ -108,13 +108,13 @@ Follow these steps to run the project on your machine:
    ```bash
    cd backend
    npm install
- ```
+   ```
 
   for frontend(client):
    ```bash
    cd client
    npm install
-
+   ```
 
 3. **Set up Environment Variables**
   
