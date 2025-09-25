@@ -91,4 +91,13 @@ to your `.env` file in the `backend` folder:
 - `JWT_SECRET` → Secret key for JWT authentication  
 - `PORT` → Port number
 - `USER_EMAIL` → Admin email from which the otp will be sent
-- `UsSER_PASS` → Password for the use of email
+- `UsSER_PASS` → Password for the use of email.
+
+## 🖥️ Running Locally
+
+Follow these steps to run the project on your machine:  
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/Ajith7736/part-time-connect.git
+   cd part-time-connect
