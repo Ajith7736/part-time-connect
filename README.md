@@ -115,9 +115,8 @@ Follow these steps to run the project on your machine:
    ```
 
 3. **Set up Environment Variables**
-  
- - create an .env file in the backend folder.
- - Add the above mentioned env variables.
+   - create an .env file in the backend folder.
+   - Add the above mentioned env variables.
 
 4. **Start the backend**
   for backend(server):
