@@ -100,7 +100,7 @@ Follow these steps to run the project on your machine:
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/Ajith7736/part-time-connect.git
-   cd part-time-connect
+   cd part-time-connect```
 
 2. **Install Dependencies** 
 
@@ -126,6 +126,7 @@ Follow these steps to run the project on your machine:
    ```bash
    cd backend
    nodemon server.js
+   ```
 
  This will run backend on port 3000
 
@@ -135,6 +136,7 @@ Follow these steps to run the project on your machine:
   Open terminal and run:
    ```bash
    npm run dev
+   ```
  
  This will run frontend on port 5173
 
