@@ -136,5 +136,72 @@ Follow these steps to run the project on your machine:
    This will run frontend on port 5173
 
 
+---
+
+## Folder Structure 
+
+will add later
+
+
+---
+
+## 🚀 Usage
+
+### For Students
+- Create an account or log in.  
+- Browse part-time job listings filtered by location, time.  
+- Apply directly through the portal.  
+
+### For Employers
+- Register as an employer.  
+- Post part-time job opportunities with flexible hours.  
+- View applicants detail and get their email id.  
+
+---
+
+## 🛣️ Roadmap / Future Enhancements
+
+- 🔄 Profile management with resume upload  
+- 🔄 Real-time notifications    
+- 🔄 AI-based job recommendations 
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! 🎉  
+
+1. Fork the repo  
+2. Create a new branch (`git checkout -b feature/your-feature`)  
+3. Commit changes (`git commit -m "Add some feature"`)  
+4. Push to the branch (`git push origin feature/your-feature`)  
+5. Open a Pull Request  
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.  
+You’re free to use, modify, and distribute with proper credit.  
+
+---
+
+## 🙌 Acknowledgements
+
+- [Node.js](https://nodejs.org/)  
+- [Express.js](https://expressjs.com/)  
+- [MongoDB](https://www.mongodb.com/)  
+- [Vercel](https://vercel.com/) (for deployment)  
+
+---
+
+## 📧 Contact
+
+👤 **Ajith P**  
+📩 Email: [ajith.aju39502@gmail.com]  
+🔗 GitHub: [Ajith7736](https://github.com/Ajith7736)  
+
+---
+
 
 
