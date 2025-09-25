@@ -103,6 +103,7 @@ Follow these steps to run the project on your machine:
    cd part-time-connect```
 
 2. **Install Dependencies** 
+
    for backend(server):
    ```bash
    cd backend
