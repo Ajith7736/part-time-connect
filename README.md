@@ -57,19 +57,24 @@ Here are some of the things this app can do:
 ## Screenshots
 
 ### HomePage
-<img width="1920" height="913" alt="homepage" src="https://github.com/user-attachments/assets/21647b9b-4e9c-4804-9d46-f21da629d700" />
 
-***
+<img width="1920" height="913" alt="homepage" src="https://github.com/user-attachments/assets/21647b9b-4e9c-4804-9d46-f21da629d700" />
 
 
 ### User Dashboard
+
 <img width="1892" height="908" alt="Dashboard" src="https://github.com/user-attachments/assets/a2d9aee6-8ea6-46bc-b5d9-87450bf30270" />
 
+
 ### Admin Dashboard
+
 <img width="1908" height="902" alt="Admin" src="https://github.com/user-attachments/assets/d49d7d20-a854-4ca6-ab40-c070d85be8f0" />
 
+
 ### Company Dashboard
+
 <img width="1882" height="897" alt="company dashboard" src="https://github.com/user-attachments/assets/b146711c-a893-4431-9933-d55b83668f97" />
+
 
 ---
 
