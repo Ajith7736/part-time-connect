@@ -21,6 +21,8 @@
 - [Roadmap / Future Enhancements](#roadmap)  
 - [Contributing](#contributing)  
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 ---
 
@@ -159,7 +161,7 @@ will add later
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### For Students
 - Create an account or log in.  
@@ -173,7 +175,7 @@ will add later
 
 ---
 
-## 🛣️ Roadmap / Future Enhancements
+## Roadmap
 
 - 🔄 Profile management with resume upload  
 - 🔄 Real-time notifications    
@@ -181,7 +183,7 @@ will add later
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! 🎉  
 
@@ -193,14 +195,14 @@ Contributions are welcome! 🎉
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the **MIT License**.  
 You’re free to use, modify, and distribute with proper credit.  
 
 ---
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
 - [Node.js](https://nodejs.org/)  
 - [Express.js](https://expressjs.com/)  
@@ -209,7 +211,7 @@ You’re free to use, modify, and distribute with proper credit.
 
 ---
 
-## 📧 Contact
+## Contact
 
 👤 **Ajith P**  
 📩 Email: [ajith.aju39502@gmail.com]  
