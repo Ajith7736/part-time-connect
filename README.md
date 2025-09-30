@@ -1,6 +1,6 @@
 # PartTime-Connect
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-Click-Here-blue)](https://part-time-connect.vercel.app)  
+[![Live Demo](https://img.shields.io/badge/live_demo-click_here-blue)](https://part-time-connect.vercel.app)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
