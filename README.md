@@ -56,9 +56,9 @@ Here are some of the things this app can do:
 
 ## Screenshots
 
-*(Include some images of your app, e.g., homepage, dashboard, job listing, etc.)*
 
-![Home Page](screenshots/home.png)  
+<img width="1920" height="913" alt="homepage" src="https://github.com/user-attachments/assets/21647b9b-4e9c-4804-9d46-f21da629d700" />
+
 ![Employer Dashboard](screenshots/employer-dashboard.png)  
 ![Job Listing](screenshots/job-listing.png)  
 
