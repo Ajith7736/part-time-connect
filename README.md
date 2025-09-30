@@ -59,7 +59,7 @@ Here are some of the things this app can do:
 ### HomePage
 <img width="1920" height="913" alt="homepage" src="https://github.com/user-attachments/assets/21647b9b-4e9c-4804-9d46-f21da629d700" />
 
----
+--
 
 ### User Dashboard
 <img width="1892" height="908" alt="Dashboard" src="https://github.com/user-attachments/assets/a2d9aee6-8ea6-46bc-b5d9-87450bf30270" />
