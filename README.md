@@ -3,7 +3,8 @@
 [![Live Demo](https://img.shields.io/badge/live_demo-click_here-blue)](https://part-time-connect.vercel.app)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Ajith7736&repo=Bug-Lab&theme=default)](https://github.com/Ajith7736/Bug-Lab)
+[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Ajith7736&repo=part-time-connect&theme=default)](https://github.com/Ajith7736/part-time-connect)
+
 
 
 ---
