@@ -124,16 +124,17 @@ Follow these steps to run the project on your machine:
 
 2. **Install Dependencies** 
 
+   for frontend(client):
+   ```bash
+   npm install
+   ```
+   
    for backend(server):
    ```bash
    cd backend
    npm install
    ```
-   for frontend(client):
-   ```bash
-   cd client
-   npm install
-   ```
+  
 
 3. **Set up Environment Variables**
    - create an .env file in the backend folder.
