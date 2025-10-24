@@ -6,9 +6,6 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { clearwishlist } from '../../src/redux/wishlistSlice'
-import { clearappliedjobs } from '../../src/redux/appliedJobSlice'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Login() {
@@ -19,7 +16,6 @@ function Login() {
     formState: { errors, isSubmitting },
   } = useForm()
 
-  const dispatch = useDispatch()
   const [Formdata, setFormdata] = useState(null)
   const navigate = useNavigate()
   const userlog = localStorage.getItem("user")
@@ -101,7 +97,6 @@ function Login() {
           </form>
           <div className='flex flex-col gap-3'>
             <div className='text-center'>Dont have an account ? <Link to={'/Signup'} className='text-red-600 hover:underline'>Signup</Link></div>
-            {/* <div className='text-center'>Forgot Password ? <Link to={'/Signup'} className='text-red-600 hover:underline'>Reset Password</Link></div> */}
             <div className='text-center'>Sign up as Company ? <Link to={'/company'} className='bg-purple-500 text-white font-bold logo p-2 rounded-md hover:bg-purple-600 ml-2'>Company</Link></div>
 
           </div>

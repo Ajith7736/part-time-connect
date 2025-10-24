@@ -9,7 +9,6 @@ import { IoMdEyeOff } from "react-icons/io";
 import Loading from './Loading'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-import { createWorker } from 'tesseract.js'
 import Otp from './Otp'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -22,16 +21,26 @@ function Signup() {
   } = useForm()
 
   const [Formdata, setFormdata] = useState(null)
-  const [filename, setfilename] = useState("")
   const [eyevisible, seteyevisible] = useState(false)
   const passref = useRef()
   const userlog = localStorage.getItem("user")
   const navigate = useNavigate()
-  const [finaltext, setfinaltext] = useState(null)
-  const [Fullname, setFullname] = useState(null)
-  const [Fulltext, setFulltext] = useState(null)
   const [showotp, setshowotp] = useState(false)
   const [isloading, setisloading] = useState(false)
+
+  const onSubmit = async (data) => {
+    await delay();
+    console.log(data);
+    setFormdata(data);
+  }
+
+  const delay = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    })
+  }
 
   useEffect(() => {
     if (userlog == "Loggedin") {
@@ -73,58 +82,11 @@ function Signup() {
     }
   }
 
-  // custom delay
-
-  const delay = (d) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve()
-      }, d * 1000);
-    })
-  }
-
-  // set the formdata and match the id card name with the specified Full name
-
-  const onSubmit = async (data) => {
-    if (finaltext.matching == true) {
-      await delay(1)
-      setFormdata({ ...data, Idproof: data.Idproof[0].name })
-    } else {
-      toast.error("Full name not found in Uploaded Id card,Please check the image quality and try again")
-    }
-  }
 
   function handleeye() {
     seteyevisible(!eyevisible)
   }
 
-  // convert the image into text format
-
-  const readTextFromImage = async (file) => {
-    try {
-      const worker = await createWorker("eng")
-      const { data: { text } } = await worker.recognize(file)
-      await worker.terminate()
-      return text
-    }catch(err){
-      toast.error("Failed to read ID Proof image");
-      return "";
-    }
-  }
-
-  // To check whether Fullname and image text matches when both the image text and full name changes accordingly
-
-  useEffect(() => {
-    if (Fullname && Fulltext) {
-      const normalize = (str) => str.toLowerCase().replace(/\s+/g, '');
-      const match = normalize(Fulltext).includes(normalize(Fullname));
-      if (match) {
-        setfinaltext({ name: match[0], matching: true })
-      } else {
-        setfinaltext({ matching: false })
-      }
-    }
-  }, [Fullname, Fulltext])
 
 
   return (
@@ -169,23 +131,6 @@ function Signup() {
                 <label htmlFor="Age">Age</label>
                 <input {...register("Age", { required: { value: true, message: "This field is required" }, min: { value: 17, message: "You must be 18 years old or above" } })} type="number" name='Age' id='Age' placeholder='Enter Your Age' className='bg-gray-100 p-2 rounded-lg focus:outline-none' />
                 {errors.Age && <div className='text-red-500'>{errors.Age.message}</div>}
-                <label htmlFor="Idproof">IdProof</label>
-                <label htmlFor="Idproof" className='border-2 border-purple-500 border-dotted text-center p-5 text-purple-500 rounded-xl flex flex-col items-center gap-4'>
-                  <div><img src="Upload.svg" className='size-10' alt="" /></div>
-                  {filename ? <div className='font-bold text-lg'>{filename.name}</div> : <div className='font-bold text-lg'>Upload File</div>}
-                </label>
-                {errors.Idproof && <div className='text-red-500'>{errors.Idproof.message}</div>}
-                <input {...register("Idproof", {
-                  required: { value: true, message: "This field is required" }, onChange: async (e) => {
-                    const file = e.target.files[0]
-                    setfilename(file);
-                    if (file) {
-                      let text = await readTextFromImage(file)
-                      text = text.replace(".", "")
-                      setFulltext(text)
-                    }
-                  }
-                })} type="file" name='Idproof' id='Idproof' className='hidden' />
               </div>
               <div className='section2 flex flex-col gap-2 lg:w-1/2'>
                 <label htmlFor="Username">Username</label>

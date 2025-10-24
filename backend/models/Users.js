@@ -19,9 +19,6 @@ const UserSchema = new mongoose.Schema({
     , Gender: {
         type: String
     }
-    , Idproof: {
-        type: String,
-    }
     , Username: {
         type: String,
         required: true

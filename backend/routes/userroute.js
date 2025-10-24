@@ -7,7 +7,7 @@ const Blocklist = require("../models/Bloclist.js")
 require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // or your email provider
+  service: 'gmail',
   auth: {
     user: process.env.USER_EMAIL,
     pass: process.env.USER_PASS

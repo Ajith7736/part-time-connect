@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Jobdetails() {
@@ -36,7 +37,7 @@ function Jobdetails() {
 
   // get particular job
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (jobid) {
       getjob()
     }
